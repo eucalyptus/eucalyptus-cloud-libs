@@ -1,0 +1,7 @@
+Copyright 2012 Netflix, Inc.
+https://github.com/Netflix/glisten
+
+Updated for Groovy 2.4.5 support
+https://github.com/sjones4/glisten/tree/groovy-245
+
+See licenses/APACHE-2 for the full text of the license.
