@@ -1,0 +1,33 @@
+distdir = @PACKAGE_TARNAME@-@PACKAGE_VERSION@
+prefix = @prefix@
+datarootdir = @datarootdir@
+datadir = @datadir@
+
+.PHONY: all clean dist distclean distdir install
+
+all:
+
+install: *.jar
+	install -d -m 0755 $(DESTDIR)$(datarootdir)/eucalyptus
+	install -p -m 0644 $^ $(DESTDIR)$(datarootdir)/eucalyptus
+
+distdir: README Makefile.in configure licenses tests *.jar
+	rm -rf $(distdir)
+	mkdir -p $(distdir)
+	cp -pR $^ $(distdir)
+
+dist: distdir
+	mkdir -p dist
+	tar -cJ -f dist/$(distdir).tar.xz $(distdir)
+	rm -rf $(distdir)
+
+clean:
+	rm -rf dist
+	rm -rf $(distdir)
+
+distclean: clean
+	rm -f  Makefile
+	rm -rf autom4te.cache
+	rm -f  config.log
+	rm -f  config.status
+	rm -f  configure
