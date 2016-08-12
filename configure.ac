@@ -1,4 +1,4 @@
-m4_define([base_version], [4.3])
+m4_define([base_version], [4.4])
 m4_define([git_revision],
           m4_esyscmd([git rev-parse HEAD | cut -c-7 | tr -d '\n']))
 m4_define([git_commit_count],
