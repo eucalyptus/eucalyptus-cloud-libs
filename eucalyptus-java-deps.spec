@@ -1,5 +1,5 @@
 Name:           eucalyptus-java-deps
-Version:        %{?base_version}%{!?base_version:0}
+Version:        4.3
 Release:        0%{?build_id:.%build_id}%{?dist}
 Summary:        Eucalyptus cloud java dependencies
 
